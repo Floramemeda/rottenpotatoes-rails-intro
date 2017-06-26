@@ -1,0 +1,28 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Novel
+
+= form_tag novel_path(@novel), :method => :put do
+
+  = label :novel, :title, '书名'
+  = text_field :novel, 'title'
+
+  = label :novel, :rating, '评分'
+  = select :novel, :rating, ['1','2','3','4','5','6','7','8','9','10','11']
+
+  = label :novel, :release_date, '发布日期'
+  = date_select :novel, :release_date
+  
+  = label :novel, :description, '简介'
+  = text_field :novel, 'description'
+  
+  = label :novel, :short_comment, '短评'
+  = text_field :novel, 'short_comment'
+  
+  = label :novel, :medium_comment, '中评'
+  = text_field :novel, 'medium_comment'
+  
+  = label :novel, :long_comment, '长评'
+  = text_field :novel, 'long_comment'
+  
+  = submit_tag '更新'

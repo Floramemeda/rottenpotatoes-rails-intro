@@ -1,0 +1,20 @@
+-#  This file is app/views/novels/index.html.haml
+%h1 小说列表
+
+%table#novels
+  %thead
+    %tr
+      %th 书名
+      %th 评分
+      %th 发布日期
+      %th 更多信息
+  %tbody
+    - @novels.each do |novel|
+      %tr
+        %td= novel.title 
+        %td= novel.rating
+        %td= novel.release_date
+        %td= novel.description      
+        %td= link_to "详情", novel_path(novel)
+
+= link_to '添加', new_novel_path

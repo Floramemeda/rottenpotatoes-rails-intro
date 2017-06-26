@@ -22,4 +22,16 @@ ActiveRecord::Schema.define(version: 20150809022253) do
     t.datetime "updated_at"
   end
 
+  create_table "novels", force: :cascade do |t|
+    t.string   "title"
+    t.string   "rating"
+    t.text     "description"
+    t.text     "short_comment"
+    t.text     "medium_comment"
+    t.text     "long_comment"
+    t.datetime "release_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

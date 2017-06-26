@@ -1,0 +1,31 @@
+-# in app/views/novels/show.html.haml
+
+%h2 小说详情： #{@novel.title}
+
+%ul#details
+  %li
+    评分:
+    = @novel.rating
+  %li
+    发布日期:
+    = @novel.release_date.strftime("%B %d, %Y")
+
+%h3 简介:
+
+%p#description= @novel.description
+
+%h3 短评:
+
+%p#short_comment= @novel.short_comment
+
+%h3 中评:
+
+%p#medium_comment= @novel.medium_comment
+
+%h3 长评:
+
+%p#long_comment= @novel.long_comment
+
+= link_to '编辑', edit_novel_path(@novel)
+= button_to '删除', novel_path(@novel), :method => :delete, :confirm => '是否确认删除'
+= link_to '返回列表', novels_path
